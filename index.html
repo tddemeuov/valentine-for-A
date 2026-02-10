@@ -581,10 +581,11 @@
             max-width: 420px;
         }
 
-        .success-gif-wrap img {
+        .success-gif-wrap video {
             display: block;
             width: 100%;
             height: auto;
+            border-radius: 12px;
         }
 
         .reset-btn {
@@ -637,15 +638,18 @@
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">...ты дополняешь меня</p>
                     <p class="valentine-question">Ты будешь моей <s>Валентинкой</s> АЛИНтянкой?</p>
-                    <button type="button" class="yes-only-btn" id="yesBtn">Yes</button>
+                    <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
                 </div>
             </div>
 
             <!-- VIEW: Success -->
             <div id="successView" class="modal-view">
-                <p class="modal-title">Love u <3(000)!</p>
+                <p class="modal-title">Люблю тебя безмерно, безгранично, бесконечно... безумно❤️♾️</p>
                 <div class="success-gif-wrap">
-                    <img src="giphy.gif" alt="" />
+                    <video autoplay loop muted playsinline>
+                        <source src="giphy.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
                 <button type="button" class="reset-btn" id="resetBtn">Reset</button>
             </div>
