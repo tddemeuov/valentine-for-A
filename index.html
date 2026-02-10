@@ -668,6 +668,8 @@
 
         .yes-only-btn,
         .no-btn {
+            flex: 1;
+            max-width: 180px;
             font-size: 18px;
             padding: 12px 24px;
             background: #FFDAE9;
@@ -681,6 +683,7 @@
             justify-content: center;
             gap: 4px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
         }
 
         .yes-only-btn:hover,
@@ -749,7 +752,7 @@
                     <div class="answer-wrapper">
                         <div class="answer-buttons">
                             <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
-                            <button type="button" class="no-btn" id="noBtn">Нет</button>
+                            <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
                         </div>
                         <p class="no-hint-text" id="noHintText"></p>
                     </div>
