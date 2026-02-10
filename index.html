@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -321,10 +322,13 @@
         }
 
         .puzzle-reveal-text .valentine-question {
-            font-size: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
             color: #111;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+            color: #c41e3a;
         }
 
         .shuffle-button {
@@ -654,24 +658,29 @@
 
         .answer-buttons {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             justify-content: center;
+            align-items: center;
             margin-top: 10px;
         }
 
         .no-btn {
-            font-size: 16px;
-            padding: 10px 20px;
-            background: #eee;
-            color: #555;
-            border: 1px solid rgba(0, 0, 0, 0.15);
+            font-size: inherit;
+            /* берёт размер шрифта от Да */
+            padding: 12px 24px;
+            /* такой же, как у yes-only-btn */
+            background: #fff;
+            /* белая */
+            color: #333;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50px;
+            font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
         .no-btn:hover {
-            transform: scale(0.95);
+            transform: scale(0.96);
         }
 
         .no-hint-text {
@@ -721,7 +730,7 @@
                 </div>
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">...ты дополняешь меня</p>
-                    <p class="valentine-question">Ты будешь моей <s>Валентинкой</s> АЛИНтянкой?</p>
+                    <p class="valentine-question">Ты будешь моей Валентинкой?</p>
                     <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
                     <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
                 </div>
