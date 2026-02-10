@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +47,7 @@
             background: white;
             padding: 40px 36px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             width: fit-content;
             max-width: min(650px, calc(100vw - 48px));
             min-width: 0;
@@ -89,14 +90,14 @@
             background: #f5e6d3;
             border: 1px solid #d4c4a8;
             border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
             cursor: pointer;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .envelope:hover:not(.opening) {
             transform: scale(1.05);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
         }
 
         .envelope-flap {
@@ -109,7 +110,7 @@
             clip-path: polygon(0 0, 50% 50%, 100% 0);
             transform-origin: top center;
             transition: transform 0.8s cubic-bezier(0.34, 1.2, 0.64, 1);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .envelope-flap-outline {
@@ -156,6 +157,7 @@
                 width: 300px;
                 height: 218px;
             }
+
             .envelope-heart {
                 width: 52px;
                 height: 52px;
@@ -167,6 +169,7 @@
                 width: 340px;
                 height: 247px;
             }
+
             .envelope-heart {
                 width: 58px;
                 height: 58px;
@@ -182,7 +185,10 @@
         }
 
         @keyframes envelopeFadeOut {
-            to { opacity: 0; transform: scale(0.96); }
+            to {
+                opacity: 0;
+                transform: scale(0.96);
+            }
         }
 
         .modal-view .modal-title {
@@ -251,13 +257,13 @@
             border-radius: 8px;
             cursor: pointer;
             transition: box-shadow 0.1s ease, border-radius 0.1s ease, transform 0.1s ease;
-            box-shadow: 0 0px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.15);
             position: relative;
         }
 
         .puzzle-tile:hover:not(.empty) {
             transform: scale(1.01);
-            box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
             z-index: 10;
         }
 
@@ -340,8 +346,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .heart {
@@ -351,8 +364,15 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
         }
 
 
@@ -385,6 +405,7 @@
                 transform: scale(0) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: scale(1) rotate(180deg);
                 opacity: 0;
@@ -397,6 +418,7 @@
                 opacity: 1;
                 transform: scale(1) rotate(0deg);
             }
+
             100% {
                 opacity: 0;
                 transform: scale(0.5) rotate(180deg);
@@ -413,7 +435,7 @@
             padding: 12px 24px;
             background: #FFDAE9;
             color: #333;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50px;
             cursor: pointer;
             margin-top: 8px;
@@ -423,31 +445,37 @@
 
         .yes-only-btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 600px) {
             body {
                 padding: 16px;
             }
+
             .container {
                 padding: 20px 36px;
                 max-width: 94%;
                 min-height: 420px;
             }
+
             .modal-view .modal-title {
                 font-size: 20px;
             }
+
             .puzzle-reveal-text .complete-line,
             .puzzle-reveal-text .valentine-question {
                 font-size: 18px;
             }
+
             .yes-only-btn {
                 font-size: 18px;
             }
+
             .success-yay {
                 font-size: 20px;
             }
+
             .puzzle-container {
                 max-width: min(360px, 40vh);
             }
@@ -457,24 +485,30 @@
             body {
                 padding: 12px;
             }
+
             .container {
                 padding: 16px 36px;
                 max-width: 96%;
                 min-height: 380px;
             }
+
             .modal-view .modal-title {
                 font-size: 18px;
             }
+
             .puzzle-reveal-text .complete-line,
             .puzzle-reveal-text .valentine-question {
                 font-size: 16px;
             }
+
             .yes-only-btn {
                 font-size: 16px;
             }
+
             .success-yay {
                 font-size: 18px;
             }
+
             .puzzle-container {
                 max-width: min(280px, 40vh);
             }
@@ -484,23 +518,29 @@
             body {
                 padding: 10px;
             }
+
             .container {
                 padding: 12px 36px;
                 min-height: 340px;
             }
+
             .modal-view .modal-title {
                 font-size: 16px;
             }
+
             .puzzle-reveal-text .complete-line,
             .puzzle-reveal-text .valentine-question {
                 font-size: 14px;
             }
+
             .yes-only-btn {
                 font-size: 14px;
             }
+
             .success-yay {
                 font-size: 16px;
             }
+
             .puzzle-container {
                 max-width: min(240px, 40vh);
             }
@@ -511,40 +551,47 @@
             body {
                 padding: 14px;
             }
+
             .container {
                 transform: scale(0.95);
                 transform-origin: center center;
                 padding: 22px 36px;
             }
         }
+
         @media (max-height: 700px) {
             body {
                 padding: 12px;
             }
+
             .container {
                 transform: scale(0.85);
                 transform-origin: center center;
                 padding: 20px 36px;
             }
         }
+
         @media (max-height: 600px) {
             .container {
                 transform: scale(0.72);
                 padding: 16px 36px;
             }
         }
+
         @media (max-height: 500px) {
             .container {
                 transform: scale(0.6);
                 padding: 12px 36px;
             }
         }
+
         @media (max-height: 420px) {
             .container {
                 transform: scale(0.5);
                 padding: 10px 36px;
             }
         }
+
         /* Short and narrow: apply stronger scale so content fits */
         @media (max-height: 600px) and (max-width: 480px) {
             .container {
@@ -552,6 +599,7 @@
                 padding: 12px 36px;
             }
         }
+
         @media (max-height: 500px) and (max-width: 420px) {
             .container {
                 transform: scale(0.55);
@@ -604,19 +652,55 @@
             color: #111;
         }
 
+        .answer-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .no-btn {
+            font-size: 16px;
+            padding: 10px 20px;
+            background: #eee;
+            color: #555;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .no-btn:hover {
+            transform: scale(0.95);
+        }
+
+        .no-hint-text {
+            margin-top: 12px;
+            font-size: 16px;
+            color: #444;
+            min-height: 22px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
     </style>
 </head>
+
 <body>
     <!-- ENVELOPE: no modal, just envelope on pink background -->
     <div id="envelopeStage">
         <div class="envelope" id="envelope">
             <div class="envelope-heart" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" clip-rule="evenodd" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+                        clip-rule="evenodd" />
+                </svg>
             </div>
             <div class="envelope-flap">
                 <svg class="envelope-flap-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                    <line x1="0" y1="0" x2="50" y2="50" stroke="#d4c4a8" stroke-width="3" vector-effect="non-scaling-stroke" />
-                    <line x1="50" y1="50" x2="100" y2="0" stroke="#d4c4a8" stroke-width="3" vector-effect="non-scaling-stroke" />
+                    <line x1="0" y1="0" x2="50" y2="50" stroke="#d4c4a8" stroke-width="3"
+                        vector-effect="non-scaling-stroke" />
+                    <line x1="50" y1="50" x2="100" y2="0" stroke="#d4c4a8" stroke-width="3"
+                        vector-effect="non-scaling-stroke" />
                 </svg>
             </div>
         </div>
@@ -639,7 +723,10 @@
                     <p class="complete-line">...ты дополняешь меня</p>
                     <p class="valentine-question">Ты будешь моей <s>Валентинкой</s> АЛИНтянкой?</p>
                     <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
+                    <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
                 </div>
+
+                <p class="no-hint-text" id="noHintText"></p>
             </div>
 
             <!-- VIEW: Success -->
@@ -663,7 +750,7 @@
         const puzzleGrid = document.getElementById('puzzleGrid');
         const puzzleView = document.getElementById('puzzleView');
         const successView = document.getElementById('successView');
-        
+
         envelope.addEventListener('click', () => {
             envelope.style.pointerEvents = 'none';
             const heart = envelope.querySelector('.envelope-heart');
@@ -682,19 +769,19 @@
                 }, 700);
             }, 380);
         });
-        
+
         let tiles = [];
-        
+
         // 3x3 puzzle: pieces 1–9, empty piece is 3 (top-right).
         const EMPTY_PIECE = 3;
         const solution = [1, 2, 3, 4, 5, 6, 7, 8, 9]; // empty (3) at index 2 = top-right
         let currentState = [...solution];
-        
+
         function initPuzzle() {
             scramblePuzzle();
             renderPuzzle();
         }
-        
+
         function scramblePuzzle() {
             // TESTING NOTE: Use "i < 1" instead of "i < 10" so that the puzzle is one move away from completion
             for (let i = 0; i < 10; i++) {
@@ -704,28 +791,28 @@
                 [currentState[emptyIndex], currentState[randomMove]] = [currentState[randomMove], currentState[emptyIndex]];
             }
         }
-        
+
         function getValidMoves(emptyIndex) {
             const validMoves = [];
             const row = Math.floor(emptyIndex / 3);
             const col = emptyIndex % 3;
-            
+
             if (row > 0) validMoves.push(emptyIndex - 3);
             if (row < 2) validMoves.push(emptyIndex + 3);
             if (col > 0) validMoves.push(emptyIndex - 1);
             if (col < 2) validMoves.push(emptyIndex + 1);
-            
+
             return validMoves;
         }
-        
+
         function renderPuzzle() {
             puzzleGrid.innerHTML = '';
             tiles = [];
-            
+
             currentState.forEach((piece, index) => {
                 const tile = document.createElement('div');
                 tile.className = 'puzzle-tile';
-                
+
                 if (piece === EMPTY_PIECE) {
                     tile.classList.add('empty');
                     // No image: empty space is transparent until puzzle is solved
@@ -733,31 +820,31 @@
                     tile.style.backgroundImage = `url('images/tile-${piece}.png')`;
                     tile.onclick = () => moveTile(index);
                 }
-                
+
                 puzzleGrid.appendChild(tile);
                 tiles.push(tile);
             });
         }
-        
+
         function moveTile(index) {
             const emptyIndex = currentState.indexOf(EMPTY_PIECE);
             const validMoves = getValidMoves(emptyIndex);
-            
+
             if (validMoves.includes(index)) {
                 [currentState[emptyIndex], currentState[index]] = [currentState[index], currentState[emptyIndex]];
                 renderPuzzle();
-                
+
                 // Check if solved
                 if (isPuzzleSolved()) {
                     setTimeout(onPuzzleSolved, 300);
                 }
             }
         }
-        
+
         function isPuzzleSolved() {
             return currentState.every((tile, index) => tile === solution[index]);
         }
-        
+
         function onPuzzleSolved() {
             const puzzleContainer = document.getElementById('puzzleContainer');
             const puzzleGridWrap = document.getElementById('puzzleGridWrap');
@@ -775,7 +862,7 @@
                 }, 250);
             }, 280);
         }
-        
+
         function createSparkles(x, y) {
             for (let i = 0; i < 5; i++) {
                 setTimeout(() => {
@@ -789,9 +876,9 @@
                 }, i * 50);
             }
         }
-        
+
         initPuzzle();
-        
+
         const container = document.querySelector('.container');
         document.getElementById('yesBtn').addEventListener('click', () => {
             runConfettiFor(10000);
@@ -801,11 +888,58 @@
                 requestAnimationFrame(() => successView.classList.add('visible'));
             });
         });
-        
+
+        // ===== NO BUTTON LOGIC =====
+        const noBtn = document.getElementById('noBtn');
+        const noHintText = document.getElementById('noHintText');
+
+        let noClicks = 0;
+        let yesScale = 1;
+
+        const hints = [
+            "Ты уверена?..",
+            "Точно?",
+            "Ну давай 😒"
+        ];
+
+        noBtn.addEventListener('click', () => {
+            noClicks++;
+
+            // 1️⃣ первый клик — только уведомление
+            if (noClicks === 1) {
+                alert("Во значит как 👀");
+                return;
+            }
+
+            // 2️⃣ рост кнопки "Да"
+            if (noClicks <= 5) {
+                yesScale += 0.6;
+                yesBtn.style.transform = `scale(${yesScale})`;
+            }
+
+            // 3️⃣ текстовые подсказки
+            if (noClicks >= 2 && noClicks <= 4) {
+                noHintText.textContent = hints[noClicks - 2];
+                noHintText.style.opacity = "1";
+                noHintText.style.transform = "scale(1)";
+            }
+
+            // 4️⃣ почти на весь экран
+            if (noClicks >= 5) {
+                yesBtn.style.position = "fixed";
+                yesBtn.style.inset = "20px";
+                yesBtn.style.zIndex = "9999";
+                yesBtn.style.fontSize = "32px";
+            }
+
+            // "Нет" постепенно теряет смысл
+            noBtn.style.opacity = Math.max(0.25, 1 - noClicks * 0.2);
+        });
+
         document.getElementById('resetBtn').addEventListener('click', () => {
             window.location.reload();
         });
-        
+
         function runConfettiFor(ms) {
             const end = Date.now() + ms;
             function tick() {
@@ -816,7 +950,7 @@
             }
             tick();
         }
-        
+
         function createConfetti() {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
@@ -830,4 +964,5 @@
         }
     </script>
 </body>
+
 </html>
