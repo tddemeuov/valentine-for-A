@@ -328,7 +328,7 @@
             font-weight: 600;
             margin-bottom: 18px;
             letter-spacing: 0.5px;
-            color: #c41e3a;
+            line-height: 1.4;
         }
 
         .shuffle-button {
@@ -662,6 +662,7 @@
             justify-content: center;
             align-items: center;
             margin-top: 10px;
+            transition: transform 0.3s ease;
         }
 
         .no-btn {
@@ -731,11 +732,12 @@
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">...ты дополняешь меня</p>
                     <p class="valentine-question">Ты будешь моей Валентинкой?</p>
-                    <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
-                    <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
+                    <div class="answer-buttons">
+                        <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
+                        <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
+                    </div>
+                    <p class="no-hint-text" id="noHintText"></p>
                 </div>
-
-                <p class="no-hint-text" id="noHintText"></p>
             </div>
 
             <!-- VIEW: Success -->
@@ -899,6 +901,7 @@
         });
 
         // ===== NO BUTTON LOGIC =====
+        const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const noHintText = document.getElementById('noHintText');
 
@@ -922,8 +925,12 @@
 
             // 2️⃣ рост кнопки "Да"
             if (noClicks <= 5) {
-                yesScale += 0.6;
+                yesScale += 0.5;
                 yesBtn.style.transform = `scale(${yesScale})`;
+
+                // отодвигаем кнопки вниз
+                const buttonsWrap = document.querySelector('.answer-buttons');
+                buttonsWrap.style.transform = `translateY(${yesScale * 10}px)`;
             }
 
             // 3️⃣ текстовые подсказки
@@ -936,9 +943,14 @@
             // 4️⃣ почти на весь экран
             if (noClicks >= 5) {
                 yesBtn.style.position = "fixed";
-                yesBtn.style.inset = "20px";
+                yesBtn.style.inset = "24px";
                 yesBtn.style.zIndex = "9999";
-                yesBtn.style.fontSize = "32px";
+                yesBtn.style.fontSize = "clamp(22px, 5vw, 32px)"
+
+                noHintText.style.opacity = "0";
+
+                const buttonsWrap = document.querySelector('.answer-buttons');
+                buttonsWrap.style.transform = "none";
             }
 
             // "Нет" постепенно теряет смысл
