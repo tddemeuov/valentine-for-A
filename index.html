@@ -322,13 +322,15 @@
         }
 
         .puzzle-reveal-text .valentine-question {
-            font-family: 'Dancing Script', cursive;
-            font-size: 28px;
+            font-size: 20px;
+            font-style: italic;
+            /* пропись */
+            font-weight: 500;
             color: #111;
-            font-weight: 600;
-            margin-bottom: 18px;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            /* обычный шрифт */
+            text-align: center;
+            margin-bottom: 16px;
         }
 
         .shuffle-button {
@@ -658,30 +660,29 @@
 
         .answer-buttons {
             display: flex;
-            gap: 16px;
             justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-            transition: transform 0.3s ease;
+            gap: 16px;
+            /* расстояние между кнопками */
+            margin-top: 8px;
         }
 
+        .yes-only-btn,
         .no-btn {
-            font-size: inherit;
-            /* берёт размер шрифта от Да */
+            font-size: 18px;
             padding: 12px 24px;
-            /* такой же, как у yes-only-btn */
-            background: #fff;
-            /* белая */
+            background: #FFDAE9;
             color: #333;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50px;
-            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        .yes-only-btn:hover,
         .no-btn:hover {
-            transform: scale(0.96);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .no-hint-text {
@@ -690,6 +691,15 @@
             color: #444;
             min-height: 22px;
             transition: opacity 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .answer-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            /* расстояние между кнопками и текстом */
         }
     </style>
 </head>
@@ -732,11 +742,13 @@
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">...ты дополняешь меня</p>
                     <p class="valentine-question">Ты будешь моей Валентинкой?</p>
-                    <div class="answer-buttons">
-                        <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
-                        <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
+                    <div class="answer-wrapper">
+                        <div class="answer-buttons">
+                            <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
+                            <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
+                        </div>
+                        <p class="no-hint-text" id="noHintText"></p>
                     </div>
-                    <p class="no-hint-text" id="noHintText"></p>
                 </div>
             </div>
 
@@ -927,10 +939,6 @@
             if (noClicks <= 5) {
                 yesScale += 0.5;
                 yesBtn.style.transform = `scale(${yesScale})`;
-
-                // отодвигаем кнопки вниз
-                const buttonsWrap = document.querySelector('.answer-buttons');
-                buttonsWrap.style.transform = `translateY(${yesScale * 10}px)`;
             }
 
             // 3️⃣ текстовые подсказки
@@ -943,14 +951,13 @@
             // 4️⃣ почти на весь экран
             if (noClicks >= 5) {
                 yesBtn.style.position = "fixed";
-                yesBtn.style.inset = "24px";
-                yesBtn.style.zIndex = "9999";
+                yesBtn.style.top = "0";
+                yesBtn.style.left = "0";
+                yesBtn.style.width = "100vw";
+                yesBtn.style.height = "100vh";
                 yesBtn.style.fontSize = "clamp(22px, 5vw, 32px)"
-
+                yesBtn.style.zIndex = "9999";
                 noHintText.style.opacity = "0";
-
-                const buttonsWrap = document.querySelector('.answer-buttons');
-                buttonsWrap.style.transform = "none";
             }
 
             // "Нет" постепенно теряет смысл
