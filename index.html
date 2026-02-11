@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️</title>
+    <title>❤️ For Alina</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -195,7 +195,7 @@
         .modal-view .modal-title {
             font-size: 24px;
             color: #111;
-            font-weight: 500;
+            font-weight: 700;
             line-height: 1.4;
             margin-top: 16px;
             margin-bottom: 32px;
@@ -316,6 +316,7 @@
 
         .puzzle-reveal-text .complete-line {
             font-size: 20px;
+            font-weight: 700;
             color: #111;
             margin-bottom: 12px;
             line-height: 1.4;
@@ -674,11 +675,11 @@
         }
 
         .no-hint-text {
-            margin-top: 12px;
+            margin-top: 18px;
             font-size: 16px;
             color: #444;
             min-height: 22px;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease, color 0.3s ease;
             text-align: center;
         }
 
@@ -686,8 +687,41 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             /* расстояние между кнопками и текстом */
+        }
+
+        .modal-title.final-love {
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-title.final-love span {
+            display: block;
+            opacity: 0;
+            animation: loveFadeIn 1.2s ease forwards;
+        }
+
+        .modal-title.final-love span:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .modal-title.final-love span:nth-child(2) {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes loveFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -733,7 +767,7 @@
                     <div class="answer-wrapper">
                         <div class="answer-buttons">
                             <button type="button" class="yes-only-btn" id="yesBtn">Да</button>
-                            <button type="button" class="no-btn" id="noBtn">Нет</button>
+                            <button type="button" class="no-btn" id="noBtn">Нет 🙈</button>
                         </div>
                         <p class="no-hint-text" id="noHintText"></p>
                     </div>
@@ -742,7 +776,10 @@
 
             <!-- VIEW: Success -->
             <div id="successView" class="modal-view">
-                <p class="modal-title">Люблю тебя безмерно, безгранично, бесконечно... безумно❤️♾️</p>
+                <p class="modal-title final-love">
+                    <span>Love. Life. Light — You are All of It ❤️</span>
+                    <span>Хочу разделить эту жизнь с тобой навсегда ♾️</span>
+                </p>
                 <div class="success-gif-wrap">
                     <video autoplay loop muted playsinline>
                         <source src="giphy.mp4" type="video/mp4">
@@ -914,6 +951,12 @@
             "Ну давай 😒"
         ];
 
+        const hintColors = [
+            "#E57373", // мягкий красный
+            "#D32F2F", // насыщенный красный
+            "#8E2430"  // бордовый
+        ];
+
         noBtn.addEventListener('click', () => {
             noClicks++;
 
@@ -931,7 +974,10 @@
 
             // 3️⃣ текстовые подсказки
             if (noClicks >= 2 && noClicks <= 4) {
-                noHintText.textContent = hints[noClicks - 2];
+                const index = noClicks - 2;
+
+                noHintText.textContent = hints[index];
+                noHintText.style.color = hintColors[index];
                 noHintText.style.opacity = "1";
                 noHintText.style.transform = "scale(1)";
             }
