@@ -435,25 +435,6 @@
             animation: tileDisappear 0.5s ease forwards;
         }
 
-        /* Base Yes button: defined before media queries so responsive font-size overrides apply */
-        .yes-only-btn {
-            font-size: 20px;
-            padding: 12px 24px;
-            background: #FFDAE9;
-            color: #333;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 8px;
-            font-weight: 600;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .yes-only-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
         @media (max-width: 600px) {
             body {
                 padding: 16px;
@@ -668,8 +649,6 @@
 
         .yes-only-btn,
         .no-btn {
-            flex: 1;
-            max-width: 180px;
             font-size: 18px;
             padding: 12px 24px;
             background: #FFDAE9;
@@ -678,12 +657,14 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
-            display: flex;
+
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+
+            width: 120px;
+            /* 👈 фикс, чтобы были одинаковые */
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
         }
 
         .yes-only-btn:hover,
@@ -957,17 +938,16 @@
 
             // 4️⃣ почти на весь экран
             if (noClicks >= 5) {
+                yesBtn.style.transition = "none";      // убираем плавность
+                yesBtn.style.transform = "none";       // ❗ сбрасываем scale
                 yesBtn.style.position = "fixed";
-                yesBtn.style.top = "0";
-                yesBtn.style.left = "0";
+                yesBtn.style.inset = "0";
                 yesBtn.style.width = "100vw";
                 yesBtn.style.height = "100vh";
-                yesBtn.style.fontSize = "clamp(22px, 5vw, 32px)"
+                yesBtn.style.borderRadius = "0";
                 yesBtn.style.zIndex = "9999";
-
-                yesBtn.style.flex = "none";
+                yesBtn.style.fontSize = "32px";
                 yesBtn.style.padding = "0";
-                yesBtn.style.minWidth = "0";
 
                 noHintText.style.opacity = "0";
             }
